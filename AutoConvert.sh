@@ -3,8 +3,8 @@
 IFS_bak=$IFS
 IFS=$'\n'
 
-ConvertDIR="/media/sinohiro/2TB_BC/share/Convert"
-ConvertedDIR="/media/sinohiro/2TB_BC/share/Converted"
+ConvertDIR="/home/username/Convert"
+ConvertedDIR="/home/username/Converted"
 
 files=`ls -v1 ${ConvertDIR}`
 after_files=`ls -v1 $ConvertedDIR`
