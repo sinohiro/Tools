@@ -19,14 +19,14 @@ ffmpegがインストールされていることが前提条件です
 
 ## 3. ソース内の書き換え
 上2つのDIRのパスを入力してください
-例
+
 	ConvertDIR="/home/username/Convert"
-  	ConvertedDIR="/home/username/Converted"
+	ConvertedDIR="/home/username/Converted"
 
 ## 4. 実行
 ConvertDIRの中にエンコードしたい動画を入れて以下のコマンドを実行してください
  ##### AutoConvert.sh
- 		$./AutoConvert  
+ 		$./AutoConvert.sh
 
 ## 5. トラブルシューティング
  #####
