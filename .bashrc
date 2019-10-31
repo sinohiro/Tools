@@ -15,8 +15,8 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 git config --global --unset url."https://".insteadOf git://
 
-export HTTP_PROXY_USER=p160101
-export HTTP_PROXY_PASS=Pass.68544
+export HTTP_PROXY_USER={Your_ID}
+export HTTP_PROXY_PASS={Your_PassWord}
 export http_proxy="http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:8080"
 export https_proxy="http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:8080"
 echo "http & https_proxysetting...ok"
