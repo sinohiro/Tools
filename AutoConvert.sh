@@ -1,26 +1,34 @@
 #!/bin/bash
-
+#echo -e ${files%.*} '\e[1;35m <-files \e[m' <-デバック用テンプレ
 IFS_bak=$IFS
 IFS=$'\n'
 
-ConvertDIR="/home/username/Convert"
-ConvertedDIR="/home/username/Converted"
+Chekcount=`ls -1 | wc -l`
+
+for ChekDIR in chekcount;do
+	if [ ! -e ./Convert ]; then
+		mkdir Convert
+		echo "Create_ConvertDirectory"
+	fi
+	if [ ! -e ./Converted ]; then
+		mkdir Converted
+		echo "Create_ConvertedDirectory"
+	fi
+done
+
+ConvertDIR="./Convert"
+ConvertedDIR="./Converted"
 
 files=`ls -v1 ${ConvertDIR}`
 after_files=`ls -v1 $ConvertedDIR`
 
-#echo -e ${files%.*} '\e[1;35m files \e[m'
-
 for filename in ${files[@]};do
-
-#	echo -e ${after_files%.*} '\e[1;35m after_files \e[m'
-
-	for after_filename in ${after_files[@]};do
-
-		#echo -e ${filename%.*} '\e[1;35m filename \e[m'
-		#echo -e ${after_filename%.*} '\e[1;35m after_files \e[m'
-
-		if [ ${filename%.*} =  ${after_filename%.*} ]; then
+	checkmachcount=`ls -1 ./Convert | wc -l`
+	for Chekmach in $checkmachcount;do
+		echo -e $filename '\e[1;35m <-filename \e[m'
+		chekmachname=`echo ${filename} | sed 's/\.[^\.]*$//'`
+		echo -e $chekmachname '\e[1;35m chekmachname \e[m'
+		if [ -e ./Converted/${chekmachname}.* ] ; then
 			mach_file=1
 			break
 		else
@@ -32,8 +40,6 @@ for filename in ${files[@]};do
 			fi
 		fi
 	done
-
-	#echo -e ${mach_file} '\e[1;35m mach_file \e[m'
 
 	if [ ${mach_file} -eq 0 ] && [ ${support_check} -eq 1 ]; then
 		echo -e ${filename} '\e[1;33m Convert_Start... \e[m'
@@ -72,4 +78,3 @@ for filename in ${files[@]};do
 done
 
 IFS=$IFS_bak
-
