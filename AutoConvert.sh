@@ -3,6 +3,11 @@
 IFS_bak=$IFS
 IFS=$'\n'
 
+echo "Welcome to AutoMovieConverter V2.0"
+echo "\e[1;33m Caution!! This script requires ffmpeg \e[m"
+echo "You can do the following"
+echo "mkv to mp4\n"
+
 Chekcount=`ls -1 | wc -l`
 
 for ChekDIR in chekcount;do
