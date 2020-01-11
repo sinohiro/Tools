@@ -4,7 +4,7 @@ echo "start_provisioningi"
 echo "Install apps"
 echo ""
 
-read -p "Do you start provisoning? [yes/no]: " do
+read -p "Do you start provisoning? [yes/no]: " start
 if [ $start = "yes" ] || [ $start = "y" ] || [ $start = "YES" ] || [ $start = "Y" ]; then
 
 	read -p "Do you want ssh setting? [yes/no]: " ssh
