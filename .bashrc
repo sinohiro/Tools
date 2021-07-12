@@ -88,12 +88,12 @@ fi
 
 export HTTP_PROXY_USER={Your_ID}
 export HTTP_PROXY_PASS={Your_PassWord}
-export http_proxy="http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:8080"
-export https_proxy="http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:8080"
+export HTTP_PROXY="http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:8080"
+export HTTPS_PROXY="http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:8080"
 echo "http & https_proxysetting...ok"
 
 git config --global http.proxy http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:8080
-git config --global https.proxy http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:80$
+git config --global https.proxy http://${HTTP_PROXY_USER}:${HTTP_PROXY_PASS}@157.114.16.93:8080
 git config --global url."https://".insteadof git://
 
 git config --global --unset http.proxy
