@@ -20,7 +20,7 @@ fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit -u
 
-# Prompt customize
+# prompt_custmise
 fpath=(~/.zsh/completion $fpath)
 
 autoload -Uz compinit
@@ -111,3 +111,4 @@ setopt prompt_subst
 
 # プロンプトの右側にメソッドの結果を表示させる
 RPROMPT='`rprompt-git-current-branch`'
+export PATH="/opt/homebrew/opt/ncurses/bin:$PATH"
