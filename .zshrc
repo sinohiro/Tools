@@ -112,3 +112,29 @@ setopt prompt_subst
 # プロンプトの右側にメソッドの結果を表示させる
 RPROMPT='`rprompt-git-current-branch`'
 export PATH="/opt/homebrew/opt/ncurses/bin:$PATH"
+
+# docker補完
+if [ -e ~/.zsh/completions ]; then
+  fpath=(~/.zsh/completions $fpath)
+fi
+
+autoload -U compinit
+compinit
+
+export LSCOLORS=cxfxcxdxbxegedabagacad
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/sinohiro/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/sinohiro/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/sinohiro/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/sinohiro/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
